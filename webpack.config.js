@@ -7,7 +7,7 @@ module.exports = {
     entry: {
         app: './src/index.js'
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     devServer: {
         contentBase: './src'
     },
@@ -26,7 +26,10 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            }
+            },
+            {
+                test: /\.css$/, use: 'css-loader'
+            },
         ]
     },
     output: {
